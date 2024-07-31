@@ -143,7 +143,7 @@
 #   reboot:
 
 - name: Joining the master node
-  command: "{{ hostvars[groups['ec2_master'][0]]['token']['stdout'] }}"
+  command: "{{ hostvars[groups['openstack_control'][0]]['token']['stdout'] }}"
 
 - name: Cleaning Caches on RAM
   shell: echo 3 > /proc/sys/vm/drop_caches
