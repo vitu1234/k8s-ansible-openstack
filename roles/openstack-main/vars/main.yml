@@ -1,0 +1,20 @@
+---
+# vars file for roles/openstack-main
+instance_tag:
+        - mgmt-control
+        - mgmt-node1
+        - mgmt-node2
+
+
+openstack_cloud: openstack
+user_domain_name: Default
+project_domain_name: Default
+project_name: admin
+region_name: RegionOne
+availability_zone: "az1"
+network_id: e32ef734-26bd-45be-9782-d459cacccf22
+image_id: 4c36a286-4e29-4f48-9c6d-a339fecffd46 #The name or id of the base image to boot.
+key_name: mgmt-key1
+flavor: 4
+timeout: 200
+

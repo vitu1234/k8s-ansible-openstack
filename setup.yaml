@@ -1,0 +1,24 @@
+- hosts: localhost
+  gather_facts: no
+  vars_files:
+        - cred.yml
+  tasks:
+    - name: Running Main OpenStack Role
+      include_role:
+        name: openstack-main
+
+- hosts: openstack_control
+  gather_facts: no
+  vars_files:
+    - cred.yml
+  tasks:
+    - name: Running K8s Control Role
+      include_role:
+        name: k8s_control
+
+- hosts: openstack_worker
+  gather_facts: no
+  tasks:
+    - name: Running K8s Worker Role
+      include_role:
+        name: k8s_workernode
